@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="@luowei">
+    <meta property="qc:admins" content="50074275777516106714052617"/>
+    <!-- 兼容手机浏览器，禁止其缩放网页内容 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>ceshi</title>
+</head>
+<body>
+    <a id="qqLoginBtn" href="javascript:sso();"><img src="img/Connect_logo_3.png"></a>
+
+    <script type="text/javascript">
+        function sso(){
+            var ref = window.open("https://setup-beta.steedos.com/se/qq/sso", "sso", 
+                    "toolbar=yes,location=yes,directories=no,status=no,menubar=yes,scrollbars=yes,resizable=no,copyhistory=yes,width=800,height=600,top=" + 
+                    (screen.height - 600) / 3 + ",left=" + (screen.width - 800) / 2);
+
+            var timer = setInterval(function() {
+                if(ref.closed) {
+                    clearInterval(timer);
+                    window.parent.location.reload();
+                }
+            }, 1000);
+        }
+    </script>
+</body>
+</html>
